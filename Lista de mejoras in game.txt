@@ -1,0 +1,24 @@
+
+
+
+LIsta de cosas que añadir o mejorar In Game 
+
+1 mini explosion balas vs balaenemy(listo aunque les falta sonido)
+2 Mejorar Frame TrnCision(casi listo)
+3 agregar mas IA 
+
+ cambiar musica
+
+niveles={1:(25, 60,     15,         0 , 0,                      False, 1, 0),
+         2:(10, 400,    0,        0, 0,                      True, 0, 0), # Trancision
+         3:(700, 60,    0,        5, 0,                      False, 2, 0),
+         4:(700, 60,    0,        10, 0,                      False, 2, 1),
+         5:(35, 65,    0,        0, 0,                      True, 0, 0),   #Trancision
+         6:(35, 65,    19,        0, 0,                    False, 3, 0),   
+         7:(80, 65,    0,        13, 0,                    False, 3, 0),
+         8:(5, 65,    0,        0, 0,                      False, 3, 1),
+         9:(10, 65,    0,        0, 0,                    True, 0, 0),   #Trancision
+         10:(100, 68,    0,        15, 0,                    False, 4, 0),
+         11:(10, 72,    0,        0, 0,                    True, 0, 0), #Trancision
+         12:(100, 73,    20,        0, 0,                    False, 5, 0)}
+        
