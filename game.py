@@ -258,13 +258,13 @@ def gameon():
             if acendente:
                 if proxfps:
                     diferencia = proxfps - frame
-                    print("Subiendo VEl", proxfps, frame, "diferencia", diferencia)                  
+                    #print("Subiendo VEl", proxfps, frame, "diferencia", diferencia)                  
                     if diferencia >1:
                         diferencia = 1
                     frame +=diferencia
                 if velocidadfondo_mov <19:
                     velocidadfondo_mov += 0.06
-                    print("mov alc", velocidadfondo_mov)
+                    #print("mov alc", velocidadfondo_mov)
                 else:
                     if frame == proxfps :
                         acendente = False
@@ -276,16 +276,16 @@ def gameon():
                 if -1 < duracionevento < 1:
                     decreciente = True
                     maximo = False
-                    print("fin maximo")
-                print(duracionevento)
+                    #print("fin maximo")
+                #print(duracionevento)
             
             elif decreciente: 
                     if velocidadfondo_mov > 2:
                         velocidadfondo_mov -= 0.05
-                    print("mov fondo decenso", velocidadfondo_mov)
+                    #print("mov fondo decenso", velocidadfondo_mov)
 
                     diferencia = frame - newproxfps 
-                    print("ultimo proceso", newproxfps, frame, "diferencia", diferencia)
+                    #print("ultimo proceso", newproxfps, frame, "diferencia", diferencia)
                     
                     if diferencia >1:
                         diferencia = 1
@@ -443,7 +443,6 @@ def gameon():
         bala2 = disparo_enemy()
         all.add(bala2)
         municion_enemy.add(bala2)
-        print("agregado municion")
     def spawnnave1(maxnave, contadornave1):
         if maxnave > contadornave1:
             for i in range(1):
@@ -556,8 +555,6 @@ def gameon():
         if istrancision == True:
             cantidad_meteoros = 0
             isnave1 = 0
-            proxfps = 400#
-            max_tiempoxetapa = 5
 
             posyfondo1, posyfondo2, run, exit =trancision(frame, posyfondo1,
                             posyfondo2, score)
@@ -566,6 +563,8 @@ def gameon():
             #asegurase que la explosion no aparesca en la transicion
             finexplosion = True
             explosion_frame = 0
+            finexplosion_chica = True
+            explosion_chica_frame = 0
         #____proceso para adecuar FPS__
         if proxfps:
             if proxfps > frame:
@@ -662,7 +661,6 @@ def gameon():
 
         if len(escudos_activos) >= 2:
             escudos_activos.sprites()[1].kill()
-            print("no dos xd")
             escudos_activos.sprites()[0].aumentarvida()
             pass
 
@@ -759,7 +757,6 @@ def gameon():
         for bala in municion:
             enemigo = pygame.sprite.spritecollideany(bala, municion_enemy)
             if enemigo:
-                print("hola mundo")
                 bumx2, bumy2 = bala.rect.center
                 finexplosion_chica = False
                 explosion_chica_frame = 0
