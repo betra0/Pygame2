@@ -64,7 +64,7 @@ cordenadasjugador = []
 #grupos pygames
 
 #(duracion,fpsinicial, cant_meteoros,cantidadnave1,agregarnave1,cantidadnave2,agregarnave2)
-niveles={1:(25, 60,     15,         0 , 0,                      False, 1, 0),
+niveles={1:(2, 60,     15,         0 , 0,                      False, 1, 0),
          2:(10, 400,    0,        0, 0,                      True, 0, 0), # Trancision
          3:(700, 60,    0,        5, 0,                      False, 2, 0),
          4:(700, 60,    0,        10, 0,                      False, 2, 1),

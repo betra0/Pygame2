@@ -222,8 +222,11 @@ def gameon():
                 print("fin")
                 break
         return exit
-    def trancision(frame, proxfps, posyfondo1, posyfondo2, duracionevento, score):
-        
+    def trancision(frame, posyfondo1, posyfondo2, score):
+        #===
+        proxfps = 200
+        duracionevento = 4
+
         # Declaracion de variables===
         inicio = False
         run = True
@@ -256,11 +259,11 @@ def gameon():
                 if proxfps:
                     diferencia = proxfps - frame
                     print("Subiendo VEl", proxfps, frame, "diferencia", diferencia)                  
-                    if diferencia >2:
+                    if diferencia >1:
                         diferencia = 1
                     frame +=diferencia
-                if velocidadfondo_mov <6:
-                    velocidadfondo_mov += 0.01
+                if velocidadfondo_mov <19:
+                    velocidadfondo_mov += 0.06
                     print("mov alc", velocidadfondo_mov)
                 else:
                     if frame == proxfps :
@@ -278,18 +281,18 @@ def gameon():
             
             elif decreciente: 
                     if velocidadfondo_mov > 2:
-                        velocidadfondo_mov -= 0.005
-                    print("mov no", velocidadfondo_mov)
+                        velocidadfondo_mov -= 0.05
+                    print("mov fondo decenso", velocidadfondo_mov)
 
                     diferencia = frame - newproxfps 
                     print("ultimo proceso", newproxfps, frame, "diferencia", diferencia)
                     
-                    if diferencia >2:
+                    if diferencia >1:
                         diferencia = 1
 
                     frame -= diferencia
                        
-                    if frame == newproxfps:
+                    if frame == newproxfps and velocidadfondo_mov < 10:
                         break          
             
             #:::::::::::::::::FIN:::::::::::::::::::::::
@@ -553,11 +556,11 @@ def gameon():
         if istrancision == True:
             cantidad_meteoros = 0
             isnave1 = 0
-            proxfps = 400
+            proxfps = 400#
             max_tiempoxetapa = 5
 
-            posyfondo1, posyfondo2, run, exit =trancision(frame, proxfps, posyfondo1,
-                            posyfondo2, max_tiempoxetapa, score)
+            posyfondo1, posyfondo2, run, exit =trancision(frame, posyfondo1,
+                            posyfondo2, score)
 
             procesocambionivel = True
             #asegurase que la explosion no aparesca en la transicion
