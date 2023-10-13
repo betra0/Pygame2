@@ -40,15 +40,16 @@ def gameon():
 
 
     #===============cargar explosion============
-    explosion_chica_images = []
+    
     explosion_images = [pygame.image.load(os.path.join(rutasprites, f"explosion{i+1}.png")) for i in range(11)]
+    explosion_chica_images = [pygame.image.load(os.path.join(rutasprites, f"explosion{i+1}.png")) for i in range(11)]
 
-    for i in range(len(explosion_images)):
-        imagen_escalada = pygame.transform.scale(explosion_images[i], (30, 30))
-        explosion_chica_images.append(imagen_escalada)
+    for i in range(len(explosion_chica_images)):
+        explosion_chica_images[i] = pygame.transform.scale(explosion_chica_images[i], (30, 30))  
 
     for i in range(len(explosion_images)):
         explosion_images[i] = pygame.transform.scale(explosion_images[i], (100, 100))
+
     explosion_frame = 0  # Índice del fotograma actual de la explosión
     explosion_chica_frame = 0
     #::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -204,7 +205,7 @@ def gameon():
             finexplosion, explosion_frame =explosion(xss, yss, finexplosion, explosion_frame)
 
             if finexplosion == True:
-                print("fin explosion")
+                print(contadorfin)
                 pygame.mixer.music.pause()
                 contadorfin -= 1
                 fpsover -= 1
@@ -477,7 +478,7 @@ def gameon():
     efex_explocion1 = pygame.mixer.Sound(efectoexplocion2mp3)
     efex_explocion2 = pygame.mixer.Sound(efectoexplocion1mp3)
     efex_disparo1 =  pygame.mixer.Sound(efectodisparo1)
-    efex_disparo1.set_volume(0.3)
+    efex_disparo1.set_volume(0.6)
     efex_explocion1.set_volume(0.05)
     efex_explocion2.set_volume(0.1)
     
@@ -773,7 +774,7 @@ def gameon():
             timexetapa +=0.5
             frame += 0.05
             if cantidad_meteoros > 0:
-                score += 2
+                score += 4
             if time_dificultad >= 11:
                 cantidad_meteoros = dificil(cantidad_meteoros)
                 time_dificultad = 0
