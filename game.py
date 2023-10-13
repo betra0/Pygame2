@@ -1,6 +1,6 @@
 import pygame 
 from pygame.locals import (K_UP, K_DOWN, K_LEFT, K_RIGHT, 
-            K_ESCAPE, KEYDOWN, QUIT, K_w, K_s, K_d, K_a, K_SPACE)
+            K_ESCAPE, KEYDOWN, QUIT, K_w, K_s, K_d, K_a, K_SPACE, K_LSHIFT)
 
 from clases import(jugador, crater, misil, disparo, nave_enemy, disparo_enemy, escudo)
 
@@ -414,6 +414,10 @@ def gameon():
                     pausa = False
                 if eventos.key == K_SPACE:
                     actmisil = True
+                if eventos.key == K_s:
+                    actdisparo = True
+                if eventos.key == K_LSHIFT:
+                    actdisparo = True
             elif eventos.type == pygame.MOUSEBUTTONDOWN:
                 if eventos.button == 1:  # Botón izquierdo del mouse
                      actdisparo = True
