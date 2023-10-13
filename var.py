@@ -63,7 +63,11 @@ tiempo_recarga = 200
 cordenadasjugador = []
 #grupos pygames
 
-#(duracion,fpsinicial, cant_meteoros,cantidadnave1,agregarnave1,cantidadnave2,agregarnave2)
+
+#los niveles se ejecutan atraves de este dicionario (clave: valor), 
+#para cada nivel hay unas intruciones especificas
+#de lo que se quiere hacer 
+#(duracion,fpsinicial, cant_meteoros,cantidadnave1,none, trascision, estapa actual, cantidad escudo)
 niveles={1:(25, 60,     15,         0 , 0,                      False, 1, 0),
          2:(10, 400,    0,        0, 0,                      True, 0, 0), # Trancision
          3:(700, 60,    0,        5, 0,                      False, 2, 0),
